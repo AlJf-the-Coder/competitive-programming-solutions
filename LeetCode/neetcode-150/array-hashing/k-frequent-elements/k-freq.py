@@ -1,5 +1,5 @@
 class Solution(object):
-    def topKFrequentB(self, nums, k):
+    def topKFrequent(self, nums, k):
         freq = {}
 
         buckets = []
@@ -28,6 +28,7 @@ class Solution(object):
         return k_freq
                 
 
+class Solution1(object):
     def topKFrequent(self, nums, k):
         """
         :type nums: List[int]
