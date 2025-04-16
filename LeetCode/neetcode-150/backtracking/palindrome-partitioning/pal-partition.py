@@ -10,6 +10,31 @@ class Solution:
                 return True
             return s[l] == s[r] and is_palindrome(l + 1, r - 1)
 
+        def divide(i):
+            if i > n - 1:
+                parts.append(part.copy())
+                return
+            for j in range(i, n):
+                if is_palindrome(i, j):
+                    part.append(s[i: j + 1])
+                    divide(j + 1)
+                    part.pop()
+
+        divide(0)
+        return parts
+
+class Solution1:
+    def partition(self, s: str) -> List[List[str]]:
+        n = len(s)
+        parts = []
+        part = []
+
+        @cache
+        def is_palindrome(l, r):
+            if r <= l:
+                return True
+            return s[l] == s[r] and is_palindrome(l + 1, r - 1)
+
         def divide(j, i):
             if j > n - 1:
                 parts.append(part.copy())
@@ -24,7 +49,7 @@ class Solution:
             
         return parts
 
-class Solution1:
+class Solution2:
     def partition(self, s: str) -> List[List[str]]:
         n = len(s)
         parts = []

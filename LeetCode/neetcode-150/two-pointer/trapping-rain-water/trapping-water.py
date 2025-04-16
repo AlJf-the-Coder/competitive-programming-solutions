@@ -40,9 +40,6 @@ class Solution1:
 
         return water
 
-    
-                
-
 class Solution2:
     def trap(self, height: List[int]) -> int:
         n = len(height)
